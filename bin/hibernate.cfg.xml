@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>      
+  <session-factory>
+    <!-- Database connection settings -->
+    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="connection.url">jdbc:mysql://localhost:3306/quick_rescue</property>
+    <property name="connection.username">root</property>
+    <property name="connection.password">GR911m31</property>
+    <property name="show_sql">true</property>
+    
+    <!--  Property to auto create tables in database (basically hibernate drop and re-creates the entire schema each time when we run the program)
+    <property name="hibernate.hbm2ddl.auto">create</property>
+        -->
+    <!--  Property to auto create tables in database if not existed earlier, else insert into existing table (basically creates whatever is new)
+    <property name="hibernate.hbm2ddl.auto">update</property>
+        -->
+        
+    <!-- Model classes -->
+    <mapping class="quickrescue.model.Account" />
+    <mapping class="quickrescue.model.Contact" />
+    <mapping class="quickrescue.model.Address" />
+      
+  </session-factory>
+</hibernate-configuration>
